@@ -1,80 +1,88 @@
 {% extends "master.html" %}
 
 {% block navbar %}
-   {% include 'nav-bar.html' %}
+    {% include 'nav-bar.html' %}
 {% endblock %}
 
 {% block left-menu %}
-   {% include 'left-menu.html' %}
+    {% include 'left-menu.html' %}
 {% endblock %}
 
 {% block content %}
-   <div class="container-xxl flex-grow-1 container-p-y">
-        <!-- Input Sizing -->
+    <div class="container-xxl flex-grow-1 container-p-y">
         <div class="col-md-6">
-         <div class="card">
-           <h5 class="card-header">Input Sizing & Shape</h5>
-           <div class="card-body">
-             <small class="text-light fw-medium">Input text</small>
+            <div class="card">
+                <h5 class="card-header">Thông tin về đồ dùng</h5>
+                <div class="card-body">
+                    <small class="text-light fw-medium">Input text</small>
 
-             <div class="mt-2 mb-4">
-               <label for="largeInput" class="form-label">Large input</label>
-               <input
-                 id="largeInput"
-                 class="form-control form-control-lg"
-                 type="text"
-                 placeholder=".form-control-lg" />
-             </div>
-             <div class="mb-4">
-               <label for="defaultInput" class="form-label">Default input</label>
-               <input id="defaultInput" class="form-control" type="text" placeholder="Default input" />
-             </div>
-             <div>
-               <label for="smallInput" class="form-label">Small input</label>
-               <input
-                 id="smallInput"
-                 class="form-control form-control-sm"
-                 type="text"
-                 placeholder=".form-control-sm" />
-             </div>
-           </div>
-           <hr class="m-0" />
-           <div class="card-body">
-             <small class="text-light fw-medium">Input select</small>
-             <div class="mt-2 mb-4">
-               <label for="largeSelect" class="form-label">Large select</label>
-               <select id="largeSelect" class="form-select form-select-lg">
-                 <option>Large select</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-               </select>
-             </div>
-             <div class="mb-4">
-               <label for="defaultSelect" class="form-label">Default select</label>
-               <select id="defaultSelect" class="form-select">
-                 <option>Default select</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-               </select>
-             </div>
-             <div>
-               <label for="smallSelect" class="form-label">Small select</label>
-               <select id="smallSelect" class="form-select form-select-sm">
-                 <option>Small select</option>
-                 <option value="1">One</option>
-                 <option value="2">Two</option>
-                 <option value="3">Three</option>
-               </select>
-             </div>
-           </div>
-           <button type="submit" class="btn btn-primary">Send</button>  
-         </div>
-       </div>
-   </div>
+                    <div class="mt-2 mb-4">
+                        <label for="largeInput" class="form-label">Tên đồ dùng (Name of Item)</label>
+                        <input id="largeInput" class="form-control form-control-lg" type="text" placeholder="........" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="defaultInput" class="form-label">Mô tả chi tiết (Detailed Description)</label>
+                        <input id="defaultInput" class="form-control" type="text" placeholder="........" />
+                    </div>
+                    <div>
+                      <label for="smallSelect" class="form-label">Tình trạng (Condition)</label>
+                     <select id="smallSelect" class="form-select form-select-lg">
+                          <option>.......</option>
+                          <option value="new">Mới (New)</option> <option value="used">Đã qua sử dụng (Used)</option> <option value="like_new">Gần như mới (Like New)</option> <option value="good">Tốt (Good)</option> <option value="fair">Khá (Fair)</option>
+                      </select>
+                    </div>
+                </div>
+                <hr class="m-0" />
+                <div class="card-body">
+                    <small class="text-light fw-medium">Input select</small>
+                    <div class="mt-2 mb-4">
+                        <label for="largeSelect" class="form-label">Loại đồ dùng (Type of Item)</label>
+                        <select id="largeSelect" class="form-select form-select-lg">
+                          <option>.......</option>
+                          <option value="Dụng cụ học tập (Stationery)">Dụng cụ học tập (Stationery)</option>
+                          <option value="Sách giáo trình (Textbooks)">Sách giáo trình (Textbooks)</option>
+                          <option value="Đồ dùng học tập điện tử (Electronic Learning Devices)">Đồ dùng học tập điện tử (Electronic Learning Devices)</option>
+                      </select>
+                    </div>
+                    <div class="mb-4">
+                      <label for="defaultInput" class="form-label">Thông tin liên hệ (Contact Information)</label>
+                      <input id="defaultInput" class="form-control" type="text" placeholder="Số điện thoại hoặc email" />
+                    </div>
+                    <div>
+                      <label for="smallSelect" class="form-label">Ghi chú (note)</label>
+                      <input id="smallSelect" class="form-control" type="text" placeholder="........" />
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', () => {
+            // Hiển thị hiệu ứng loading
+            sendButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
+            sendButton.disabled = true; // Vô hiệu hóa nút để tránh gửi nhiều lần
+
+            // Giả lập một yêu cầu AJAX hoặc xử lý dữ liệu (thay thế bằng logic thực tế của bạn)
+            setTimeout(() => {
+                // Sau khi xử lý xong (thành công hoặc thất bại)
+                sendButton.innerHTML = 'Send'; // Khôi phục nội dung nút
+                sendButton.disabled = false; // Kích hoạt lại nút
+
+                // Nếu thành công, bạn có thể thêm hiệu ứng hoặc thông báo thành công
+                alert('Dữ liệu đã được gửi!'); // Hoặc sử dụng toastr, sweetalert, ...
+
+                // Nếu thất bại, bạn có thể hiển thị thông báo lỗi
+                // alert('Đã có lỗi xảy ra!');
+            }, 3000); // Giả sử mất 3 giây để xử lý
+        });
+    </script>
 {% endblock %}
 
 {% block footer %}
-   {% include 'footer.html' %}
-{% endblock %}
+    {% include 'footer.html' %}
+{% endblock %} 

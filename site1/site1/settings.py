@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'site1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DjangoDB',
-        'USER': 'myuser',
-        'PASSWORD': 'Huynh@832005',
-        'HOST': 'db',  # Tên dịch vụ trong docker-compose
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
