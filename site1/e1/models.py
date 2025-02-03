@@ -14,6 +14,7 @@ class Course(models.Model):
     start_date = models.DateField()  # Ngày bắt đầu
     end_date = models.DateField()  # Ngày kết thúc
     active = models.BooleanField(default=True)  # Trường active
-
+    image_url = models.URLField(max_length=500, blank=True, null=True)  # URL hình ảnh khóa học
+    
     def __str__(self):
         return f"{self.name} ({self.start_date} - {self.end_date})"  # Hiển thị tên khóa học kèm ngày bắt đầu và kết thúc
