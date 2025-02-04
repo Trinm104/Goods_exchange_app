@@ -43,3 +43,5 @@ def CourseNew(request):
         'form': form,
     }
     return HttpResponse(template.render(context, request))
+
+    
