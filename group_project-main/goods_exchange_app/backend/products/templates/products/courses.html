@@ -1,0 +1,42 @@
+{% extends "master.html" %}
+
+{% block navbar %}
+   {% include 'nav-bar.html' %}
+{% endblock %}
+
+{% block left-menu %}
+   {% include 'left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h5 class="my-4">Trao đổi đồ dùng học tập </h5>
+  <div class="row">
+    {% for item in courses %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100">
+        <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+        <div class="card-body">
+          <h6 class="card-title">{{ item.name }}</h6>
+          <p class="card-text">Năm: {{ item.year }}</p>
+          <p class="card-text">Từ {{ item.start_date }} đến {{ item.end_date }}</p>
+          {% if item.discount %}
+          <p class="text-danger">Giảm giá: {{ item.discount }}%</p>
+          {% endif %}
+        </div>
+        <div class="card-footer text-center">
+          <a href="{% url 'edit-course' %}?course_id={{ item.id }}" class="btn btn-primary btn-sm">Trao đổi</a>
+          <a href="javascript:void(0);" class="btn btn-danger btn-sm">Xóa</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>Không có đồ dùng trao đổi nào.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+   {% include 'footer.html' %}
+{% endblock %}
