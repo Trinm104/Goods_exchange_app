@@ -10,7 +10,15 @@
 
 {% block content %}
 <div class="container">
-  <h5 class="my-4">Trao đổi đồ dùng học tập </h5>
+  <h5 class="my-4">Trao đổi đồ dùng học tập</h5>
+
+  <!-- Thanh tìm kiếm và lọc -->
+  <form method="get" class="mb-4">
+    {% csrf_token %}
+    {{ search_form.as_p }}  <!-- Form tìm kiếm -->
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+  </form>
+
   <div class="row">
     {% for item in courses %}
     <div class="col-md-3 mb-4">
@@ -28,10 +36,37 @@
           <a href="{% url 'edit-course' %}?course_id={{ item.id }}" class="btn btn-primary btn-sm">Trao đổi</a>
           <a href="javascript:void(0);" class="btn btn-danger btn-sm">Xóa</a>
         </div>
+        
+        <!-- Phần Đánh Giá Khóa Học -->
+        <div class="card-body mt-3">
+          <h6>Đánh giá khóa học</h6>
+          {% if item.reviews.all %}
+            <ul class="list-unstyled">
+              {% for review in item.reviews.all %}
+                <li>
+                  <strong>{{ review.user.username }}</strong>: 
+                  {{ review.rating }} sao
+                  <p>{{ review.comment }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>Chưa có đánh giá nào cho khóa học này.</p>
+          {% endif %}
+          
+          <!-- Form thêm đánh giá -->
+          <h6>Thêm đánh giá của bạn</h6>
+          <form method="post">
+            {% csrf_token %}
+            {{ review_form.as_p }}  <!-- Form đánh giá -->
+            <input type="hidden" name="course_id" value="{{ item.id }}">
+            <button type="submit" class="btn btn-primary btn-sm">Gửi đánh giá</button>
+          </form>
+        </div>
       </div>
     </div>
     {% empty %}
-    <p>Không có đồ dùng trao đổi nào.</p>
+    <p>Không có khóa học nào.</p>
     {% endfor %}
   </div>
 </div>
