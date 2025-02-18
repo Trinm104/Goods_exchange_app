@@ -28,7 +28,7 @@ class PythonOrgSearch(unittest.TestCase):
 
         # Điền mật khẩu
         password = driver.find_element(By.NAME, "password")
-        password.send_keys("832005")
+        password.send_keys("1234")
 
         # Gửi thông tin đăng nhập
         password.send_keys(Keys.RETURN)
