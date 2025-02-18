@@ -50,12 +50,32 @@
                 <div class="mb-3">
                     <textarea id="commentInput" class="form-control" rows="3" placeholder="Nhập bình luận..."></textarea>
                 </div>
-                <button type="button" class="btn btn-success" onclick="addComment()">Gửi</button>
-            </form>
-            <ul id="commentList" class="list-group mt-3"></ul>
+                <button type="button" class="btn btn-primary" id="sendButton">GỬI</button>
+            </div>
         </div>
     </div>
 
     <script>
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', () => {
+            // Hiển thị hiệu ứng loading
+            sendButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
+            sendButton.disabled = true; // Vô hiệu hóa nút để tránh gửi nhiều lần
+
+            // Giả lập một yêu cầu AJAX hoặc xử lý dữ liệu (thay thế bằng logic thực tế của bạn)
+            setTimeout(() => {
+                // Sau khi xử lý xong (thành công hoặc thất bại)
+                sendButton.innerHTML = 'Send'; // Khôi phục nội dung nút
+                sendButton.disabled = false; // Kích hoạt lại nút
+
+                // Nếu thành công, bạn có thể thêm hiệu ứng hoặc thông báo thành công
+                alert('Dữ liệu đã được gửi!'); // Hoặc sử dụng toastr, sweetalert, ...
+
+                // Nếu thất bại, bạn có thể hiển thị thông báo lỗi
+                // alert('Đã có lỗi xảy ra!');
+            }, 3000); // Giả sử mất 3 giây để xử lý
+        });
+    </script>
         function addComment() {
             let commentInput = document.getElementById("
