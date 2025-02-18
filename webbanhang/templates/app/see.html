@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Chi tiết sản phẩm - Giáo trình Toán Cao Cấp</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <img src="/mnt/data/image.png" class="card-img-top" alt="Giáo trình Toán Cao Cấp">
+            <div class="card-body">
+                <h3 class="card-title">📘 Giáo trình Toán Cao Cấp</h3>
+                <p class="card-text">✨ **Sách mới 100%**, chưa từng sử dụng. **Dành cho sinh viên năm nhất** hoặc những ai đang muốn củng cố kiến thức toán học chuyên sâu.</p>
+                
+                <h5>📖 Nội dung sách</h5>
+                <p>
+                    Giáo trình Toán Cao Cấp là tài liệu quan trọng trong chương trình học đại học, giúp sinh viên hiểu rõ các khái niệm **giải tích**, **đại số tuyến tính**, **hàm số nhiều biến**, **chuỗi số và chuỗi hàm**, cùng nhiều nội dung nâng cao khác. 
+                </p>
+                
+                <h5>🔍 Đối tượng phù hợp</h5>
+                <ul>
+                    <li>📚 Sinh viên các ngành kỹ thuật, công nghệ, kinh tế, tài chính.</li>
+                    <li>🎯 Những ai muốn ôn luyện kiến thức toán học để thi cao học.</li>
+                    <li>📖 Người yêu thích toán học và muốn mở rộng kiến thức chuyên sâu.</li>
+                </ul>
+
+                <h5>⚡ Tại sao bạn nên sở hữu cuốn sách này?</h5>
+                <p>
+                    - **Hệ thống kiến thức chặt chẽ**, giúp bạn dễ dàng tiếp thu.<br>
+                    - **Bài tập phong phú**, có hướng dẫn giải chi tiết.<br>
+                    - **Bổ trợ kiến thức cho các môn học khác** như Xác suất thống kê, Phương trình vi phân, Toán ứng dụng.<br>
+                    - **Sách chất lượng cao**, giấy in rõ nét, không mờ nhòe.
+                </p>
+
+                <p><strong>👤 Người bán:</strong> Nguyễn Văn Hà</p>
+                <p><strong>📅 Đăng ngày:</strong> 10/10/2023</p>
+                <p><strong>📦 Tình trạng:</strong> <span class="badge bg-success">Còn hàng</span></p>
+                <p><strong>💰 Giá:</strong> <span class="text-primary fw-bold">50.000 VNĐ</span></p>
+                
+                <button class="btn btn-primary">🛒 Mua ngay</button>
+            </div>
+        </div>
+        
+        <!-- Phần bình luận -->
+        <div class="mt-4">
+            <h4>💬 Bình luận</h4>
+            <form id="commentForm">
+                <div class="mb-3">
+                    <textarea id="commentInput" class="form-control" rows="3" placeholder="Nhập bình luận..."></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" id="sendButton">GỬI</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', () => {
+            // Hiển thị hiệu ứng loading
+            sendButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
+            sendButton.disabled = true; // Vô hiệu hóa nút để tránh gửi nhiều lần
+
+            // Giả lập một yêu cầu AJAX hoặc xử lý dữ liệu (thay thế bằng logic thực tế của bạn)
+            setTimeout(() => {
+                // Sau khi xử lý xong (thành công hoặc thất bại)
+                sendButton.innerHTML = 'Send'; // Khôi phục nội dung nút
+                sendButton.disabled = false; // Kích hoạt lại nút
+
+                // Nếu thành công, bạn có thể thêm hiệu ứng hoặc thông báo thành công
+                alert('Dữ liệu đã được gửi!'); // Hoặc sử dụng toastr, sweetalert, ...
+
+                // Nếu thất bại, bạn có thể hiển thị thông báo lỗi
+                // alert('Đã có lỗi xảy ra!');
+            }, 3000); // Giả sử mất 3 giây để xử lý
+        });
+    </script>
+        function addComment() {
+            let commentInput = document.getElementById("

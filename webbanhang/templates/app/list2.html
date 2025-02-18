@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sách giáo trình</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .badge {
+            font-size: 0.9em;
+        }
+        .seller-info {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">thiết bị học tập</a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Tìm sách...">
+                <button class="btn btn-outline-light" type="submit">Tìm</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Danh sách thiết bị được đăng bán</h2>
+        
+        <!-- Bộ lọc môn học -->
+        <div class="row mb-4">
+            <div class="col text-center">
+                <div class="btn-group" role="group" aria-label="Bộ lọc môn học">
+                    <button type="button" class="btn btn-outline-secondary active">Tất cả</button>
+                    <button type="button" class="btn btn-outline-secondary">laptop</button>
+                    <button type="button" class="btn btn-outline-secondary">điện thoại</button>
+                    <button type="button" class="btn btn-outline-secondary">máy tính bảng</button>
+                    <button type="button" class="btn btn-outline-secondary">Khác</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Danh sách sản phẩm -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Sách 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'app/images/banner/image copy 3.png' %}" class="card-img-top" alt="Giáo trình Toán Cao Cấp">   
+                    <div class="card-body">
+                        <h5 class="card-title">lap top </h5>
+                        <p class="card-text"> chưa sử dụng. Phù hợp cho sinh viên năm nhất.</p>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Người bán: Nguyễn Văn Hà<br>
+                            <i class="fas fa-clock"></i> Đăng ngày: 10/10/2023
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Còn hàng</span>
+                            <span class="text-primary fw-bold">50.000 VNĐ</span>
+                        </div>
+                        <!-- Hai nút xem và mua ngay -->
+                        <div class="d-flex justify-content-around mt-3">
+                            <a href="#" class="btn btn-outline-primary">Xem</a>
+                            <a href="#" class="btn btn-primary">Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sách 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'app/images/banner/image copy 4.png' %}" class="card-img-top" alt="Giáo trình Vật Lý Đại Cương">
+                    <div class="card-body">
+                        <h5 class="card-title">lap top msi f63 thin</h5>
+                        <p class="card-text"> đã qua sử dụng nhưng còn mới</p>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Người bán: Trần Thị B<br>
+                            <i class="fas fa-clock"></i> Đăng ngày: 12/10/2023
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning text-dark">Chỉ còn 1 sản phẩm</span>
+                            <span class="text-primary fw-bold">999.999.000 VNĐ</span>
+                        </div>
+                        <!-- Hai nút xem và mua ngay -->
+                        <div class="d-flex justify-content-around mt-3">
+                            <a href="#" class="btn btn-outline-primary">Xem</a>
+                            <a href="#" class="btn btn-primary">Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sách 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'app/images/banner/image copy 5.png' %}" class="card-img-top" alt="Giáo trình Kinh Tế Vi Mô">
+                    <div class="card-body">
+                        <h5 class="card-title">lap top hp elitebook 2440p</h5>
+                        <p class="card-text">tình trạng  100%, kèm phụ kiện.</p>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Người bán: Lê Văn C<br>
+                            <i class="fas fa-clock"></i> Đăng ngày: 15/10/2023
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Còn hàng</span>
+                            <span class="text-primary fw-bold">1.000.060.000 VNĐ</span>
+                        </div>
+                        <!-- Hai nút xem và mua ngay -->
+                        <div class="d-flex justify-content-around mt-3">
+                            <a href="#" class="btn btn-outline-primary">Xem</a>
+                            <a href="#" class="btn btn-primary">Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Có thể thêm các sản phẩm khác tương tự -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
