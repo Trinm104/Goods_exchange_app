@@ -21,15 +21,16 @@
       padding: 2rem;
       width: 400px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     .register-container h2 {
-      text-align: center;
       margin-bottom: 1.5rem;
       color: #333;
       font-weight: 700;
     }
     .form-group {
       margin-bottom: 1rem;
+      text-align: left;
     }
     .form-group label {
       display: block;
@@ -77,12 +78,27 @@
       background-color: #f093fb;
       transform: translateY(-2px);
     }
+    .success-message {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-bottom: 10px;
+    }
   </style>
+  <script>
+    function showSuccessMessage() {
+      document.getElementById("success-message").style.display = "block";
+    }
+  </script>
 </head>
 <body>
   <div class="register-container">
     <h2>Đăng Ký</h2>
-    <form method="post">
+
+    <!-- Thông báo đăng ký thành công (ẩn ban đầu) -->
+    <p id="success-message" class="success-message">Đăng ký thành công</p>
+
+    <form method="post" onsubmit="event.preventDefault(); showSuccessMessage();">
       {% csrf_token %}
       <div class="form-group">
         <label for="username">Tên đăng nhập:</label>
