@@ -1,22 +1,56 @@
-<div class="container mt-5">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trao Đổi Đồ Dùng Học Tập</title>
+  <!-- Link Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #333;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .display-4 {
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Phần header -->
     <div class="row">
         <div class="col-md-12 text-center">
             <h1 class="display-4">Về Chúng Tôi</h1>
-            <p class="lead">Chúng tôi là một thương hiệu chuyên cung cấp các sản phẩm sữa chất lượng cao.</p>
+            <p class="lead">Nền tảng trao đổi mua bán đồ dùng học tập hàng đầu, kết nối cộng đồng học tập sáng tạo và năng động.</p>
         </div>
     </div>
 
-    <!-- Phần giới thiệu chung -->
+    <!-- Phần giới thiệu chung (Chúng Tôi Là Ai?) -->
     <div class="row mt-5">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h2>Chúng Tôi Là Ai?</h2>
             <p>
-                Chúng tôi là một thương hiệu chuyên cung cấp các sản phẩm sữa tươi và sữa hạt chất lượng cao, được sản xuất từ nguồn nguyên liệu tự nhiên và an toàn. Với hơn 10 năm kinh nghiệm, chúng tôi cam kết mang đến cho khách hàng những sản phẩm tốt nhất.
+                Chúng tôi là một cộng đồng giao dịch đồ dùng học tập với giao diện hiện đại, thân thiện và đầy màu sắc. Nền tảng của chúng tôi giúp người dùng dễ dàng trao đổi, mua bán những sản phẩm học tập uy tín và chất lượng.
             </p>
             <p>
-                Sứ mệnh của chúng tôi là cung cấp các sản phẩm dinh dưỡng, giúp cải thiện sức khỏe và chất lượng cuộc sống của mọi người.
+                Sứ mệnh của chúng tôi là tạo ra một môi trường giao dịch an toàn, minh bạch và sáng tạo, hỗ trợ học sinh, sinh viên và giáo viên tìm kiếm các giải pháp học tập tối ưu.
             </p>
         </div>
     </div>
@@ -29,63 +63,93 @@
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
+        <!-- Card 1: Chất Lượng -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100 p-3">
                 <div class="card-body">
                     <h3 class="card-title">Chất Lượng</h3>
-                    <p class="card-text">Chúng tôi cam kết sử dụng nguyên liệu tự nhiên và quy trình sản xuất đạt chuẩn.</p>
+                    <p class="card-text">Cam kết cung cấp đồ dùng học tập chính hãng và đảm bảo.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
+        <!-- Card 2: An Toàn -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100 p-3">
                 <div class="card-body">
-                    <h3 class="card-title">Sức Khỏe</h3>
-                    <p class="card-text">Sản phẩm của chúng tôi giúp cải thiện sức khỏe và tăng cường dinh dưỡng.</p>
+                    <h3 class="card-title">An Toàn</h3>
+                    <p class="card-text">Giao dịch minh bạch, bảo mật tuyệt đối, bảo vệ quyền lợi người dùng.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
+        <!-- Card 3: Đổi Mới -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100 p-3">
                 <div class="card-body">
-                    <h3 class="card-title">Môi Trường</h3>
-                    <p class="card-text">Chúng tôi luôn hướng tới bảo vệ môi trường và phát triển bền vững.</p>
+                    <h3 class="card-title">Đổi Mới</h3>
+                    <p class="card-text">Luôn cập nhật công nghệ mới, mang đến hiệu ứng lung linh và giao diện bắt mắt.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Phần đội ngũ -->
+    <!-- Phần đội ngũ sáng lập -->
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <h2>Đội Ngũ Của Chúng Tôi</h2>
-            <p class="lead">Những người đứng sau thành công của thương hiệu.</p>
+            <h2>Đội Ngũ Sáng Lập</h2>
+            <p class="lead">Những người đứng sau thành công của nền tảng.</p>
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Trần đỗ hoài nam </h3>
+        <!-- Founder 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Nguyễn Minh Trí</h3>
                     <p class="card-text">Người sáng lập</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Trần Thị B</h3>
-                    <p class="card-text">Quản lý sản xuất</p>
+        <!-- Founder 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Vũ Mạnh Huynh</h3>
+                    <p class="card-text">Người sáng lập</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Lê Văn C</h3>
-                    <p class="card-text">Chuyên gia dinh dưỡng</p>
+        <!-- Founder 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Nguyễn Văn Hà</h3>
+                    <p class="card-text">Người sáng lập</p>
+                </div>
+            </div>
+        </div>
+        <!-- Founder 4 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Trần Ngọc Hùng</h3>
+                    <p class="card-text">Người sáng lập</p>
+                </div>
+            </div>
+        </div>
+        <!-- Founder 5 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Nguyễn Ngọc Hùng</h3>
+                    <p class="card-text">Người sáng lập</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Optional JavaScript cho Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
