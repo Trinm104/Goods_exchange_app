@@ -2,32 +2,190 @@
 {% load static %}
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách thiết bị học tập</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách Phụ Kiện Học Tập</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    .badge {
+      font-size: 0.9em;
+    }
+    .seller-info {
+      font-size: 0.9em;
+      color: #6c757d;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">đồ dùng học tập</a>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Danh sách đồ dùng được đăng bán</h2>
-        
-        <!-- Thông báo khi không có sản phẩm -->
-        <div class="alert alert-warning text-center" role="alert">
-            🚫 Hiện tại chưa có sản phẩm nào được đăng bán. Hãy quay lại sau nhé! 🚀
-        </div>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Trao Đổi Phụ Kiện Học Tập</a>
+      <form class="d-flex ms-auto">
+        <input class="form-control me-2" type="search" placeholder="Tìm phụ kiện...">
+        <button class="btn btn-outline-light" type="submit">Tìm</button>
+      </form>
     </div>
+  </nav>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main Content -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Danh sách Phụ Kiện Học Tập</h2>
+    <p class="text-center mb-4">Đồ dùng cá nhân và phụ kiện hỗ trợ quá trình học tập hiệu quả.</p>
+    
+    <!-- Bộ lọc danh mục -->
+    <div class="row mb-4">
+      <div class="col text-center">
+        <div class="btn-group" role="group" aria-label="Bộ lọc danh mục">
+          <button type="button" class="btn btn-outline-secondary active">Tất cả</button>
+          <button type="button" class="btn btn-outline-secondary">Balo</button>
+          <button type="button" class="btn btn-outline-secondary">Bút</button>
+          <button type="button" class="btn btn-outline-secondary">Sổ</button>
+          <button type="button" class="btn btn-outline-secondary">Thước Kẻ</button>
+          <button type="button" class="btn btn-outline-secondary">Khác</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Danh sách sản phẩm (5 sản phẩm) -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Sản phẩm 1: Balo Học Sinh Đa Năng -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'app/images/banner/image copy 25.png' %}" class="card-img-top" alt="Balo Học Sinh Đa Năng">
+          <div class="card-body">
+            <h5 class="card-title">Balo Học Sinh Đa Năng</h5>
+            <p class="card-text">Balo thiết kế thông minh, nhiều ngăn, phù hợp cho học sinh và sinh viên.</p>
+            <p class="seller-info">
+              <i class="fas fa-user"></i> Người bán: Nguyễn Văn Hà<br>
+              <i class="fas fa-clock"></i> Đăng ngày: 17/2/2025
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Còn hàng</span>
+              <span class="text-primary fw-bold">200.000 VNĐ</span>
+            </div>
+            <div class="d-flex justify-content-around mt-3">
+              <a href="#" class="btn btn-outline-primary">Xem</a>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sản phẩm 2: Bút Viết Cao Cấp -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'app/images/banner/image copy 26.png' %}" class="card-img-top" alt="Bút Viết Cao Cấp">
+          <div class="card-body">
+            <h5 class="card-title">Bút Viết Cao Cấp</h5>
+            <p class="card-text">Bút viết mượt mà, thiết kế sang trọng, hỗ trợ ghi chép hiệu quả.</p>
+            <p class="seller-info">
+              <i class="fas fa-user"></i> Người bán: Nguyễn Minh Trí<br>
+              <i class="fas fa-clock"></i> Đăng ngày: 17/2/2025
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Còn hàng</span>
+              <span class="text-primary fw-bold">50.000 VNĐ</span>
+            </div>
+            <div class="d-flex justify-content-around mt-3">
+              <a href="#" class="btn btn-outline-primary">Xem</a>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sản phẩm 3: Sổ Tay Ghi Chú Thông Minh -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'app/images/banner/image copy 27.png' %}" class="card-img-top" alt="Sổ Tay Ghi Chú Thông Minh">
+          <div class="card-body">
+            <h5 class="card-title">Sổ Tay Ghi Chú Thông Minh</h5>
+            <p class="card-text">Sổ tay với thiết kế hiện đại, chất liệu bìa cứng bền bỉ, dễ dàng mang theo mọi nơi.</p>
+            <p class="seller-info">
+              <i class="fas fa-user"></i> Người bán: Vũ Mạnh Huynh<br>
+              <i class="fas fa-clock"></i> Đăng ngày: 17/2/2025
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Còn hàng</span>
+              <span class="text-primary fw-bold">70.000 VNĐ</span>
+            </div>
+            <div class="d-flex justify-content-around mt-3">
+              <a href="#" class="btn btn-outline-primary">Xem</a>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sản phẩm 4: Thước Kẻ Chuyên Nghiệp -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'app/images/banner/image copy 28.png' %}" class="card-img-top" alt="Thước Kẻ Chuyên Nghiệp">
+          <div class="card-body">
+            <h5 class="card-title">Thước Kẻ Chuyên Nghiệp</h5>
+            <p class="card-text">Thước kẻ với độ chính xác cao, chất liệu nhựa trong suốt, thiết kế tiện lợi.</p>
+            <p class="seller-info">
+              <i class="fas fa-user"></i> Người bán: Nguyễn Ngọc Hùng<br>
+              <i class="fas fa-clock"></i> Đăng ngày: 17/2/2025
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Còn hàng</span>
+              <span class="text-primary fw-bold">30.000 VNĐ</span>
+            </div>
+            <div class="d-flex justify-content-around mt-3">
+              <a href="#" class="btn btn-outline-primary">Xem</a>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sản phẩm 5: Balo Laptop & Phụ Kiện -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'app/images/banner/image copy 29.png' %}" class="card-img-top" alt="Balo Laptop & Phụ Kiện">
+          <div class="card-body">
+            <h5 class="card-title">Balo Laptop & Phụ Kiện</h5>
+            <p class="card-text">Balo chuyên dụng cho laptop, có nhiều ngăn chứa phụ kiện, thiết kế bền bỉ.</p>
+            <p class="seller-info">
+              <i class="fas fa-user"></i> Người bán: Trần Ngọc Hùng<br>
+              <i class="fas fa-clock"></i> Đăng ngày: 17/2/2025
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Còn hàng</span>
+              <span class="text-primary fw-bold">300.000 VNĐ</span>
+            </div>
+            <div class="d-flex justify-content-around mt-3">
+              <a href="#" class="btn btn-outline-primary">Xem</a>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
